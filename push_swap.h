@@ -13,7 +13,10 @@ typedef struct  s_stack
     int     target_pos;
     int         a;
     int         b;
+    void    *content;
     struct s_stack  *next;
 }   t_stack;
 
-void    ft_sa(s_stack a);
+t_stack  ft_creat_struct(t_stack *lst, int i, int ele);
+void    ft_sa(t_stack a);
+int     ft_atoi(const char *str);
