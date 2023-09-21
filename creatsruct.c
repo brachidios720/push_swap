@@ -12,6 +12,9 @@ t_stack  ft_creat_struct(int ac, char **av)
     while (i < ac)
     {
         nb = ft_atoi(av[i]);
+        if(nb > INT_MAX || nb < INT_MIN)
+            ft_exit_error(&stack_a, NULL);
+        
     }
 
 }

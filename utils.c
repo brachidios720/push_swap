@@ -28,3 +28,26 @@ int     ft_atoi(const char *str)
         else
                 return (-nb);
 }
+
+
+void    free_stack(t_stack **stack)
+{
+        t_stack *tmp;
+
+        while(*stack)
+        {
+             tmp = (*stack)->next;
+             free(*stack);
+             *stack = tmp;
+        }
+        *stack == NULL;
+}
+
+void    ft_exit_error(t_stack **stack_a, t_stack **stack_b)
+{
+        if(stack_a == NULL || *stack_a == NULL)
+                free_stack(*stack_a);
+        if(stack_b == NULL || *stack_b == NULL)
+                free_stack(*stack_b);
+        exit(1);
+}

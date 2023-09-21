@@ -4,6 +4,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <limits.h>
+
 
 typedef struct  s_stack
 {
@@ -17,6 +19,6 @@ typedef struct  s_stack
     struct s_stack  *next;
 }   t_stack;
 
-t_stack  ft_creat_struct(t_stack *lst, int i, int ele);
+t_stack  ft_creat_struct(int ac, char **av);
 void    ft_sa(t_stack a);
 int     ft_atoi(const char *str);
