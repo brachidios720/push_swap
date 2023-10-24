@@ -24,3 +24,5 @@ int     ft_atoi(const char *str);
 t_stack *stack_new(int n);
 void    free_stack(t_stack **stack);
 void    ft_exit_error(t_stack **stack_a, t_stack **stack_b);
+void    get_stack_size(t_stack *stack);
+void    assign_index(t_stack *stack_a, t_stack *stack_size);
