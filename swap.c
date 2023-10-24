@@ -1,8 +1,35 @@
 #include "push_swap.h"
 
-void    ft_sa(t_stack *a)
+
+static void     swap(t_stack *stack)
 {
-    if(a == NULL)
-        return(1);
-    
+    int tmp;
+
+    if(stack == NULL || stack->next == NULL)
+        return;
+    tmp = stack->value;
+    stack->value = stack->next->value;
+    tmp = stack->next->value;
+    tmp = stack->index;
+    stack->index = stack->next->index;
+    tmp = stack->next->index;
+}
+
+void    do_sa(t_stack **stack_a)
+{
+    swap(*stack_a);
+    ft_putstr("sa\n");
+}
+
+void    do_sb(t_stack **stack_b)
+{
+    swap(*stack_b);
+    ft_putstr("sb\n");
+}
+
+void    do_ss(t_stack **stack_a, t_stack **stack_b)
+{
+    swap(*stack_a);
+    swap(*stack_b);
+    ft_putstr("ss\n");
 }
