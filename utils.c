@@ -51,3 +51,13 @@ void    ft_exit_error(t_stack **stack_a, t_stack **stack_b)
                 free_stack(*stack_b);
         exit(1);
 }
+void    ft_putstr(char *str)
+{
+        int   i;
+        i = 0;
+        while(str[i])
+        {
+                write(1, &str[i], 1);
+                i++;
+        }
+}
