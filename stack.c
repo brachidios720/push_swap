@@ -4,17 +4,24 @@ t_stack *stack_new(int n)
 {
     t_stack *new;
 
-    new = malloc(sizeof * new);
+    new = malloc(sizeof(t_node) * n);
     if(!new)
         return(NULL);
-    new->value = value;
-    new->index = 0;
-    new->pos = 1;
-    new->target_pos = -1;
-    new->tab_a = -1;
-    new->tab_b = -1;
-    new->next = NULL;
+    new->len = 0;
+    new->head = NULL;
+    new->last = NULL;
     return(new);
+}
+
+struct node {
+    int value;
+    struct node *next;
+    struct node *previous;
+}
+
+struct stack {
+    struct node *head;
+    int len;
 }
 
 t_stack *do_stack_bottom(t_stack *stack)
