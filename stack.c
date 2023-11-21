@@ -4,24 +4,12 @@ t_stack *stack_new(int n)
 {
     t_stack *new;
 
-    new = malloc(sizeof(t_node) * n);
+    new = malloc(sizeof(t_stack));
     if(!new)
-        return(NULL);
-    new->len = 0;
-    new->head = NULL;
+        error();
+    new->nbr = content;
     new->last = NULL;
     return(new);
-}
-
-struct node {
-    int value;
-    struct node *next;
-    struct node *previous;
-}
-
-struct stack {
-    struct node *head;
-    int len;
 }
 
 t_stack *do_stack_bottom(t_stack *stack)
@@ -33,8 +21,6 @@ t_stack *do_stack_bottom(t_stack *stack)
 
 void    add_stack_bottom(t_stack **stack, t_stack *new)
 {
-    t_stack *tmp;
-
     if(!new)
         return;
     if(!*stack)
@@ -42,8 +28,8 @@ void    add_stack_bottom(t_stack **stack, t_stack *new)
         *stack = new;
         return;
     }
-    tmp = do_stack_bottom(*stack);
-    tmp->next = new;
+    else
+        (do_stack_bottom(*stack))->next = new;
 }
 
 void    get_stack_size(t_stack *stack)
